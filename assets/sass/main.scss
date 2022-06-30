@@ -36,8 +36,6 @@
 	}
 
 	$delay-wrapper:			_duration(wrapper) - 1s;
-	$delay-overlay:			$delay-wrapper - 0.5s;
-	$delay-header:			$delay-overlay + _duration(overlay) - 0.75s;
 	$delay-nav-icons:		$delay-header + _duration(header) - 1s;
 	$delay-nav-icon:		0.25s;
 
@@ -218,28 +216,6 @@
 	}
 
 	@include bg(_misc(bg-width) * 1.5);
-
-/* Overlay */
-
-	@include keyframes('overlay') {
-		0%		{ opacity: 0; }
-		100%	{ opacity: 1; }
-	}
-
-	#overlay {
-		@include vendor('animation', 'overlay #{_duration(overlay)} #{$delay-overlay} forwards');
-		background-attachment: fixed, fixed;
-		background-image: url('images/overlay-pattern.png'), url('images/overlay.svg');
-		background-position: top left, center center;
-		background-repeat: repeat, no-repeat;
-		background-size: auto, cover;
-		height: 100%;
-		left: 0;
-		opacity: 0;
-		position: fixed;
-		top: 0;
-		width: 100%;
-	}
 
 /* Main */
 
